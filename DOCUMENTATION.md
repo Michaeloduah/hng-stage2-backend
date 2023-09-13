@@ -94,8 +94,8 @@
 ## Request:
 
 ```json
-POST /api HTTP/1.1
-Host: your-api-url.com
+POST 
+Host: https://hng-stage2-backend.vercel.app/api/
 Content-Type: application/json
 
 {
@@ -120,8 +120,8 @@ Content-Type: application/json
 ## Request:
 
 ```json
-GET /api/1 HTTP/1.1
-Host: your-api-url.com
+GET 
+Host: https://hng-stage2-backend.vercel.app/api/user_id
 ```
 
 ## Response
@@ -140,14 +140,14 @@ Host: your-api-url.com
 ### Request:
 
 ```json
-PATCH /api/1 HTTP/1.1
-Host: your-api-url.com
+PATCH 
+Host: https://hng-stage2-backend.vercel.app/api/user_id
 Content-Type: application/json
 
 {
   "name": "Updated Name",
-  "age": 35,
-  "email": "updated@example.com"
+  "track": "backend",
+  "email": "Updated Email"
 }
 
 ```
@@ -163,8 +163,8 @@ Content-Type: application/json
 ## Remove a Person
 ## Request:
 ```json
-DELETE /api/1 HTTP/1.1
-Host: your-api-url.com
+DELETE 
+Host: https://hng-stage2-backend.vercel.app/api/user_id
 ```
 
 ## Response:
@@ -177,11 +177,11 @@ Host: your-api-url.com
 
 # Known Limitations and Assumptions
 
-- The API assumes that each person has a unique identifier (user_id) for read, update, and delete operations.
+-  This API is designed for moderate usage and may not scale seamlessly to handle extremely high request volumes. 
 
-- Error handling and validation of inPATCH data are simplified in this example.
+- The API follows RESTful conventions and assumes clients will use the appropriate HTTP methods (GET, POST, PUT, DELETE) for CRUD operations.
 
-- No authentication or authorization mechanisms are implemented in this version.
+-  The API assumes that users are already authenticated through a separate system and does not handle user authentication.
 
 
 # UML DIAGRAM
@@ -191,9 +191,9 @@ Host: your-api-url.com
 
 ## To set up and deploy the API locally or on a server, follow these steps:
 
-### Clone the repository from GitHub: git clone https://github.com/Dearie-cyber/Stage-2-HNG
+### Clone the repository from GitHub: git clone https://github.com/Michaeloduah/hng-stage2-backend
 
-### Navigate to the project directory: cd Stage-2-HNG
+### Navigate to the project directory: cd hng-stage2-backend
 
 ### Install dependencies:
 
@@ -203,4 +203,4 @@ Host: your-api-url.com
 
 ## `npm start`
 
-### Access the API at https://hng-stage2-backend.vercel.app/ (adjust the port as needed).
+### Access the API at https://hng-stage2-backend.vercel.app/ .
