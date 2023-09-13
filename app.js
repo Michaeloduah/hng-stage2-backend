@@ -6,10 +6,8 @@ const session = require("express-session");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://oduahmichael :jcOZnNUY2dPQo2Yk@cluster0.syoeldr.mongodb.net/hng-stage-2";
 mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true})
-    .then((result) => app.listen(3000))
+    .then((result) => app.listen(3000), console.log("Connected to Mongoose server"))
     .catch((err) => console.log(err));
 
 
