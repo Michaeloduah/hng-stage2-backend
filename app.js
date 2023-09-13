@@ -4,13 +4,17 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 
 const app = express();
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 3000;
+
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://oduahmichael :jcOZnNUY2dPQo2Yk@cluster0.syoeldr.mongodb.net/hng-stage-2";
+mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true})
+    .then((result) => app.listen(3000))
+    .catch((err) => console.log(err));
+
 
 // Database Connection
-mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-const db = mongoose.connection;
-db.on("error", (error) => console.log(error));
-db.once("open", () => console.log("Connected to the database"));
+// mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Middlewares
 app.use(express.urlencoded({ extended: false}));
@@ -31,11 +35,11 @@ app.use((req, res, next) => {
 });
 
 // Route Prefix
-app.use("", require("./routes/routes"))
+app.use("/", require("./routes/routes"))
 
 
 
-const port = 6000;
-app.listen(port, () => {
-  console.log(`App running on port http://localhost:${port}`);
-});
+// const port = 3000;
+// app.listen(port, () => {
+//   console.log(`App running on port http://localhost:${port}`);
+// });
