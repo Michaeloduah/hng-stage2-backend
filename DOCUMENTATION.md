@@ -203,4 +203,4 @@ Host: your-api-url.com
 
 ## `npm start`
 
-### Access the API at http://localhost:3000 (adjust the port as needed).
+### Access the API at https://hng-stage2-backend.vercel.app/ (adjust the port as needed).
